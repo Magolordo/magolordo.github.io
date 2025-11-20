@@ -8,11 +8,19 @@
   <title>Magolordo - Main Page</title>
 
   <style>
+    /* Fade-in animation for the whole page */
     body {
       background-color: #f5f5dc;
       text-align: center;
       margin-top: 60px;
       font-family: Arial, sans-serif;
+      opacity: 0;                     /* Start invisible */
+      animation: fadeIn 0.5s forwards; /* Fade to full opacity */
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
     }
 
     p {
@@ -25,10 +33,6 @@
       font-weight: bold;
       transform: scaleX(1.2);
       display: inline-block;
-
-      /* Fade-in animation */
-      opacity: 0;
-      animation: fadein 0.5s ease-out forwards;
     }
 
     .wave span {
@@ -36,26 +40,21 @@
       animation: bounce 0.9s infinite ease-in-out;
     }
 
-    /* Wave timing offsets */
-    .wave span:nth-child(1) { animation-delay: 0s;   }
+    /* Delay for wave effect */
+    .wave span:nth-child(1) { animation-delay: 0s; }
     .wave span:nth-child(2) { animation-delay: 0.1s; }
     .wave span:nth-child(3) { animation-delay: 0.2s; }
     .wave span:nth-child(4) { animation-delay: 0.3s; }
     .wave span:nth-child(5) { animation-delay: 0.4s; }
     .wave span:nth-child(6) { animation-delay: 0.5s; }
 
-    /* 90s bounce */
+    /* Bouncing animation */
     @keyframes bounce {
-      0%   { transform: translateY(0)    scaleX(1.2); }
+      0%   { transform: translateY(0) scaleX(1.2); }
       50%  { transform: translateY(-16px) scaleX(1.2); }
-      100% { transform: translateY(0)    scaleX(1.2); }
+      100% { transform: translateY(0) scaleX(1.2); }
     }
 
-    /* Fade-in intro animation */
-    @keyframes fadein {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
   </style>
 </head>
 
