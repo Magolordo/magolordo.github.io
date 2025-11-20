@@ -128,14 +128,16 @@
   text-align: left;
 }
 
-/* Right image placeholder (16:9 box), now 40% smaller */
+/* Right image placeholder (16:9 box), now 40% smaller and centered with a left offset */
 .instance-image {
-  width: 27%;          /* 45% → 27% (40% size reduction) */
+  width: 30%;
   height: 0;
-  padding-bottom: 15%; /* proportional 16:9 scaling */
+  padding-bottom: 15%; /* maintains 16:9 ratio */
   background-color: #e6e6e6;
   border: 1px solid #ccc;
   border-radius: 8px;
+
+  margin-left: -40px;  /* NEW → offsets slightly left for visual centering */
 }
     
   </style>
