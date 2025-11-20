@@ -8,7 +8,7 @@
   <title>Magolordo - Main Page</title>
 
   <style>
-    /* Fade-in animation for the whole page */
+    /* Fade-in animation */
     body {
       background-color: #f5f5dc;
       text-align: center;
@@ -16,7 +16,7 @@
       font-family: Arial, sans-serif;
       opacity: 0;
       animation: fadeIn 0.5s forwards;
-      min-height: 2000px; /* Extra space for TWO content blocks */
+      min-height: 2000px;
     }
 
     @keyframes fadeIn {
@@ -28,7 +28,7 @@
       color: #555555;
     }
 
-    /* Wave animation for Hello! */
+    /* Wave animation */
     .wave {
       font-size: 4em;
       font-weight: bold;
@@ -54,24 +54,21 @@
       100% { transform: translateY(0) scaleX(1.2); }
     }
 
-    /* Small icon image */
     .icon-image {
       width: 100px;
       height: 100px;
       margin-top: 15px;
     }
 
-    /* NEW top white content block (for Hello + Welcome + image) */
     .top-block {
       width: 500px;
       padding: 40px 0;
       background-color: white;
-      margin: 0 auto 70px auto;  /* Center + spacing below */
+      margin: 0 auto 70px auto;
       border-radius: 10px;
       box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
     }
 
-    /* The existing lower white block */
     .content-block {
       width: 1200px;
       height: 1000px;
@@ -80,10 +77,10 @@
       border-radius: 10px;
       box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
       position: relative;
-      padding-top: 40px; /* Spacing for the title */
+      padding-top: 40px;
     }
 
-    /* NEW title for second section */
+    /* NEW animated title style */
     .section-title {
       font-size: 2em;
       color: #bbbbbb;
@@ -98,7 +95,6 @@
 
 <body>
 
-  <!-- NEW TOP BLOCK -->
   <div class="top-block">
 
     <h1 class="wave">
@@ -111,12 +107,20 @@
 
   </div>
 
-  <!-- Lower white block for future content -->
   <div class="content-block">
-      <p class="section-title">Are you looking to know...</p>
+      <p class="section-title">Are you looking to know<span id="dots">...</span></p>
   </div>
 
+  <!-- Animated dots script -->
+  <script>
+    const dots = document.getElementById("dots");
+    let state = 0;
+
+    setInterval(() => {
+      state = (state + 1) % 3; 
+      dots.textContent = ".".repeat(state + 1);
+    }, 1000);
+  </script>
+
 </body>
-  
-<!-- End -->
 </html>
