@@ -10,15 +10,31 @@
   <style>
     body {
       background-color: #f5f5dc; /* Beige background */
-      text-align: center;        /* Center all text horizontally */
-      margin-top: 60px;          /* Push content 60px downward */
+      text-align: center;
+      margin-top: 60px;
       font-family: Arial, sans-serif;
-      color: #000000;            /* Default text color (for Hello!) */
     }
 
     p {
-      color: #555555;            /* Gray text */
+      color: #555555;
     }
+
+    /* Style for the "Hello!" text */
+    h1 {
+      font-size: 3em;         /* About twice the size */
+      font-weight: bold;
+      transform: scaleX(1.2); /* Makes it a bit wider horizontally */
+      display: inline-block;  /* Needed for proper animation */
+      animation: bounce 1.2s infinite ease-in-out;
+    }
+
+    /* Bouncing animation */
+    @keyframes bounce {
+      0%   { transform: translateY(0) scaleX(1.2); }
+      50%  { transform: translateY(-12px) scaleX(1.2); }
+      100% { transform: translateY(0) scaleX(1.2); }
+    }
+
   </style>
 </head>
 
