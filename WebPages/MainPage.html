@@ -94,7 +94,7 @@
 /* Container for the 5 repeated rows */
 .instance-container {
   width: 100%;
-  margin-top: 40px;
+  margin-top: 90px;   /* 40px → 90px (50px lower) */
 }
 
 /* Each row */
@@ -128,16 +128,16 @@
   text-align: left;
 }
 
-/* Right image placeholder (16:9 box) */
+/* Right image placeholder (16:9 box), now 40% smaller */
 .instance-image {
-  width: 45%;
+  width: 27%;          /* 45% → 27% (40% size reduction) */
   height: 0;
-  padding-bottom: 25.3%; /* 16:9 aspect ratio (9/16 = 0.5625). 
-                            But since width is 45% of row, we compensate with 25.3% */
+  padding-bottom: 15%; /* proportional 16:9 scaling */
   background-color: #e6e6e6;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
+    
   </style>
 </head>
 
