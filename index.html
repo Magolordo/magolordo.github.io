@@ -15,7 +15,7 @@
       margin-top: 60px;
       font-family: Arial, sans-serif;
       opacity: 0;                     /* Start invisible */
-      animation: fadeIn 0.5s forwards; /* Fade to full opacity */
+      animation: fadeIn 0.5s forwards; /* Fade in */
     }
 
     @keyframes fadeIn {
@@ -27,7 +27,7 @@
       color: #555555;
     }
 
-    /* Container for letters */
+    /* Wave animation for Hello! */
     .wave {
       font-size: 4em;
       font-weight: bold;
@@ -40,7 +40,6 @@
       animation: bounce 0.9s infinite ease-in-out;
     }
 
-    /* Delay for wave effect */
     .wave span:nth-child(1) { animation-delay: 0s; }
     .wave span:nth-child(2) { animation-delay: 0.1s; }
     .wave span:nth-child(3) { animation-delay: 0.2s; }
@@ -48,11 +47,17 @@
     .wave span:nth-child(5) { animation-delay: 0.4s; }
     .wave span:nth-child(6) { animation-delay: 0.5s; }
 
-    /* Bouncing animation */
     @keyframes bounce {
       0%   { transform: translateY(0) scaleX(1.2); }
       50%  { transform: translateY(-16px) scaleX(1.2); }
       100% { transform: translateY(0) scaleX(1.2); }
+    }
+
+    /* Image styling */
+    .icon-image {
+      width: 100px;
+      height: 100px;
+      margin-top: 15px;
     }
 
   </style>
@@ -61,15 +66,13 @@
 <body>
 
   <h1 class="wave">
-    <span>H</span>
-    <span>e</span>
-    <span>l</span>
-    <span>l</span>
-    <span>o</span>
-    <span>!</span>
+    <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span><span>!</span>
   </h1>
 
   <p>Welcome to Charles Lima's website.</p>
+
+  <!-- New image under the text -->
+  <img class="icon-image" src="Images/The Magolordo.png" alt="Magolordo Image">
 
 </body>
   
