@@ -16,7 +16,7 @@
       font-family: Arial, sans-serif;
       opacity: 0;
       animation: fadeIn 0.5s forwards;
-      min-height: 2000px; /* Ensures scroll space */
+      min-height: 3000px; /* Extra space for TWO content blocks */
     }
 
     @keyframes fadeIn {
@@ -61,14 +61,24 @@
       margin-top: 15px;
     }
 
-    /* The new large white block */
+    /* NEW top white content block (for Hello + Welcome + image) */
+    .top-block {
+      width: 1000px;
+      padding: 40px 0;
+      background-color: white;
+      margin: 0 auto 60px auto;   /* Center + spacing below */
+      border-radius: 10px;
+      box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
+    }
+
+    /* The existing lower white block */
     .content-block {
       width: 1200px;
       height: 1000px;
       background-color: white;
-      margin: 100px auto 0 auto; /* 100px beneath the text + centered */
-      border-radius: 10px;       /* Slight rounding for style */
-      box-shadow: 0px 0px 12px rgba(0,0,0,0.15); /* Soft shadow for depth */
+      margin: 100px auto 0 auto; 
+      border-radius: 10px;
+      box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
     }
 
   </style>
@@ -76,15 +86,20 @@
 
 <body>
 
-  <h1 class="wave">
-    <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span><span>!</span>
-  </h1>
+  <!-- NEW TOP BLOCK -->
+  <div class="top-block">
 
-  <p>Welcome to Charles Lima's website.</p>
+    <h1 class="wave">
+      <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span><span>!</span>
+    </h1>
 
-  <img class="icon-image" src="Images/The Magolordo.png" alt="Magolordo Image">
+    <p>Welcome to Charles Lima's website.</p>
 
-  <!-- New white block for future content -->
+    <img class="icon-image" src="Images/The Magolordo.png" alt="Magolordo Image">
+
+  </div>
+
+  <!-- Lower white block for future content -->
   <div class="content-block"></div>
 
 </body>
