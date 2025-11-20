@@ -139,6 +139,25 @@
 
   margin-left: -40px;  /* NEW → offsets slightly left for visual centering */
 }
+
+.instance-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.4em;
+  font-weight: bold;
+
+  display: inline-block;      /* required for scale animations */
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.instance-link:hover {
+  transform: scale(1.5);
+  color: #000;                /* optional: slightly darker on hover */
+}
+
+.instance-link:active {
+  transform: scale(1.4);      /* small click compression */
+}
     
   </style>
 </head>
@@ -165,7 +184,9 @@
 
         <!-- Row 1 -->
         <div class="instance-row">
-            <div class="instance-text">Who am I?</div>
+            <div class="instance-text">
+                <a href="https://magolordo.github.io/WebPages/AboutMe" class="instance-link">Who am I?</a>
+            </div>
             <div class="instance-image"></div>
         </div>
 
