@@ -119,21 +119,26 @@
   padding-left: 40px;   /* NEW — shifts all text 40px to the right */
 }
 
-/* Makes the real image fit the 16:9 box perfectly */
+/* Right image with smooth fade-to-white on the right side */
 .instance-image {
   width: 30%;
   height: 0;
   padding-bottom: 15%;
-  background-image: url("Images/ObaRecorte.png");
   background-size: cover;
   background-position: center;
-  border: 1px solid #ccc;
   border-radius: 8px;
-  overflow: hidden;
+  position: relative;
 
-  /* RIGHT-SIDE FADE/BLUR EFFECT */
-  -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
-  mask-image: linear-gradient(to right, black 60%, transparent 100%);
+  /* Smooth fade-out to white on the right side */
+  -webkit-mask-image: linear-gradient(to right, 
+      rgba(0,0,0,1) 55%, 
+      rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to right, 
+      rgba(0,0,0,1) 55%, 
+      rgba(0,0,0,0) 100%);
+  
+  /* 40px left offset, as requested earlier */
+  margin-left: 40px;
 }
 
 /* Actual image inside the frame */
