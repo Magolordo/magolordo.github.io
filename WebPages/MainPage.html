@@ -12,13 +12,22 @@
     /* Fade-in animation */
     body {
       background-color: #f5f5dc;
+      background-image: url("Images/RoseBG.png");
+      background-attachment: fixed;      /* makes the image follow scrolling */
+      background-repeat: no-repeat;      /* prevents tiling */
+      background-position: center;       /* centers the rose */
+      background-size: 700px auto;       /* adjust size here if needed */
+    
       text-align: center;
       margin-top: 60px;
       font-family: Arial, sans-serif;
+    
       opacity: 0;
       animation: fadeIn 0.5s forwards;
+    
       min-height: 2000px;
     }
+
 
     @keyframes fadeIn {
       from { opacity: 0; }
