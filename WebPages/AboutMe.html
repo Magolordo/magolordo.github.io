@@ -88,13 +88,20 @@
       height: 100%;
     }
     
-    /* LEFT COLUMN: Text */
-    .bio-text {
-      flex: 1;          /* takes roughly half the space */
-      text-align: left;
-      font-size: 1.1em;
-      line-height: 1.6em;
-    }
+      .bio-text {
+        flex: 1;
+      
+        /* NEW — Center text inside the content block */
+        text-align: center;
+      
+        /* NEW — Add padding */
+        padding-right: 20px;   /* +20px right padding */
+        padding-top: 50px;     /* +50px downward padding */
+      
+        font-size: 1.1em;
+        line-height: 1.6em;
+      }
+
     
     /* RIGHT COLUMN: Image */
     .bio-image {
@@ -187,7 +194,7 @@
   
     <!-- RETURN BUTTON -->
   <div class="return-box">
-    <a href="https://magolordo.github.io" class="return-link">Return to main page</a>
+    <a href="https://magolordo.github.io/WebPages/MainPage" class="return-link">Return to main page</a>
   </div>
 
 
