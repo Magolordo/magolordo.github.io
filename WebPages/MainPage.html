@@ -124,11 +124,17 @@
   width: 30%;
   height: 0;
   padding-bottom: 15%;
-  background-color: #e6e6e6;
+  background-image: url("Images/ObaRecorte.png");
+  background-size: cover;
+  background-position: center;
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
-  position: relative;
+
+  /* RIGHT-SIDE FADE/BLUR EFFECT */
+  -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
+  mask-image: linear-gradient(to right, black 60%, transparent 100%);
+}
 
   /* 40px left offset to visually center it */
   right: 40px;
