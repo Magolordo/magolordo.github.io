@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <!-- Main Page -->
@@ -6,12 +7,21 @@
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="Images/The-Magolordo.png">
   <title>Charles Lima - Main Page</title>
-  <link rel="icon" type="image/png" href="../Images/The-Magolordo.png">
-  <title>Charles Lima - About me</title>
 
   <style>
     /* Fade-in animation */
-@@ -25,245 +23,60 @@
+    body {
+      background-color: #f5f5dc;
+      text-align: center;
+      margin-top: 60px;
+      font-family: Arial, sans-serif;
+      opacity: 0;
+      animation: fadeIn 0.5s forwards;
+      min-height: 2000px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
       to   { opacity: 1; }
     }
 
@@ -22,9 +32,6 @@
     /* Wave animation */
     .wave {
       font-size: 4em;
-    /* Large animated-changing title */
-    #changing-title {
-      font-size: 3.5em;
       font-weight: bold;
       transform: scaleX(1.2);
       display: inline-block;
@@ -52,27 +59,14 @@
       width: 100px;
       height: 100px;
       margin-top: 15px;
-      color: #444444;
-      transition: font-family 0.5s ease;
-      margin-bottom: 40px;
     }
 
     .top-block {
       width: 500px;
       padding: 40px 0;
-    /* The large white info block */
-    .info-block {
-      width: 90%;                        /* almost full screen */
-      min-height: 1200px;                /* large area for text */
       background-color: white;
       margin: 0 auto 70px auto;
       border-radius: 10px;
-      margin: 50px auto 0 auto;          /* 50px below title */
-      padding: 40px 60px;
-      border-radius: 12px;
-      text-align: left;
-      font-size: 1.3em;
-      color: #555;
       box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
     }
 
@@ -196,8 +190,6 @@ color: #555; /* soft gray */
     <img class="icon-image" src="Images/Magodraw2.png" alt="Magolordo draw Image">
   
   </div>
-  <!-- Animated title -->
-  <h1 id="changing-title">Who is Charles Lima?</h1>
 
   <div class="content-block">
     <p class="section-title">Are you looking to know<span id="dots">.</span></p>
@@ -259,36 +251,21 @@ color: #555; /* soft gray */
                 <img src="Images/EmailEx.png" alt="Email example Image" class="instance-img-content">
             </div>
         </div>
-  <!-- Giant white writing block -->
-  <div class="info-block">
-    <p>Write your biography, goals, story, etc. here...</p>
-  </div>
 
     </div>
 </div>
-  <!-- JavaScript: font cycles every 1 second -->
-  <script>
-    const title = document.getElementById("changing-title");
 
-    const fonts = [
-      "Arial, sans-serif",
-      "'Times New Roman', serif",
-      "'Courier New', monospace",
-      "'Georgia', serif",
-      "'Trebuchet MS', sans-serif",
-      "'Verdana', sans-serif"
-    ];
 
   <!-- Animated dots script -->
   <script>
     const dots = document.getElementById("dots");
     let state = 0;
-    let index = 0;
 
     setInterval(() => {
       state = (state + 1) % 3; 
       dots.textContent = ".".repeat(state + 1);
-      index = (index + 1) % fonts.length;
-      title.style.fontFamily = fonts[index];
     }, 1000);
   </script>
+
+</body>
+</html>
