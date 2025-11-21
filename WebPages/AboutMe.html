@@ -78,6 +78,40 @@
       transform: translateX(-50%);
     }
 
+        /* FLEX CONTAINER FOR TWO COLUMNS */
+    .bio-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px; /* space between text and image */
+      height: 100%;
+    }
+    
+    /* LEFT COLUMN: Text */
+    .bio-text {
+      flex: 1;          /* takes roughly half the space */
+      text-align: left;
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
+    
+    /* RIGHT COLUMN: Image */
+    .bio-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;   /* centers image inside right column */
+      align-items: flex-start;
+    }
+    
+    .bio-image img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 12px;
+      box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+      object-fit: cover;        /* ensures proper scaling for 16:9 images */
+    }
+
+
   </style>
 </head>
 
@@ -87,19 +121,32 @@
 
   <p class="subtitle">I enjoy experimenting with design, so I let the title cycle through a few of my favorite styles.</p>
 
-   <!-- BIO SECTION -->
+  <!-- BIO SECTION -->
   <div class="bio-block">
-      <p>As of the creation of this page, I am a high school student finishing my third year in Pará, Brazil. I have been programming and drawing since my earliest memory and plan to dedicate my life to them until my last.</p>
+    <div class="bio-container">
+      
+      <!-- LEFT SIDE: Text -->
+      <div class="bio-text">
+        <p>As of the creation of this page, I am a high school student finishing my third year in Pará, Brazil. I have been programming and drawing since my earliest memory and plan to dedicate my life to them until my last.</p>
   
-      <p>I have lived my entire life here, but my ambitions have always seemed to lie just beyond it. Do not misunderstand me, I am nothing without my homeland, as it is what made me. It was here that I discovered my passion for art, for the stars, and for numbers. I would be a lesser person without it.</p>
+        <p>I have lived my entire life here, but my ambitions have always seemed to lie just beyond it. Do not misunderstand me, I am nothing without my homeland, as it is what made me. It was here that I discovered my passion for art, for the stars, and for numbers. I would be a lesser person without it.</p>
   
-      <p>However, as time passed, it became clear to me that I must eventually leave to pursue new opportunities and fully reach my potential.</p>
+        <p>However, as time passed, it became clear to me that I must eventually leave to pursue new opportunities and fully reach my potential.</p>
   
-      <p>This website was created as one of many steps toward that dream, something to show others, far from me, the works I’ve created and the love I’ve poured into them. Made in equal parts as an opportunity and a record, something I can look back on fondly once I enter college.</p>
+        <p>This website was created as one of many steps toward that dream, something to show others, far from me, the works I’ve created and the love I’ve poured into them. Made in equal parts as an opportunity and a record, something I can look back on fondly once I enter college.</p>
   
-      <p>On the other pages, you will find a deeper analysis of my skills, learning, and process. This one simply explains my motivations.</p>
+        <p>On the other pages, you will find a deeper analysis of my skills, learning, and process. This one simply explains my motivations.</p>
   
-      <p>Enjoy your stay.</p>
+        <p>Enjoy your stay.</p>
+      </div>
+  
+      <!-- RIGHT SIDE: Image placeholder -->
+      <div class="bio-image">
+        <!-- Replace with your actual image later -->
+        <img src="Images/ArtEx.png" alt="Charles Lima Image">
+      </div>
+  
+    </div>
   </div>
 
   <script>
