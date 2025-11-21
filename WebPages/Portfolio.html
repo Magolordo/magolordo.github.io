@@ -4,18 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="Images/The-Magolordo.png">
-  <title>Charles Lima - Main Page</title>
+  <title>Charles Lima - Portfolio</title>
 
   <style>
-    /* Fade-in animation */
+     /* Fade-in animation */
     body {
       background-color: #f5f5dc;
+      background-image: url("Images/RoseBG.png");
+      background-attachment: fixed;      /* makes the image follow scrolling */
+      background-repeat: no-repeat;      /* prevents tiling */
+      background-position: center;       /* centers the rose */
+      background-size: 700px auto;      /* adjust size here if needed */
+    
       text-align: center;
       margin-top: 60px;
       font-family: Arial, sans-serif;
+    
       opacity: 0;
       animation: fadeIn 0.5s forwards;
-      min-height: 2000px;
+    
+      min-height: 1100px;
     }
 
     @keyframes fadeIn {
@@ -23,13 +31,210 @@
       to   { opacity: 1; }
     }
 
-    p {
-      color: #555555;
+    /* FIXED TITLE (no shifting) */
+    .title {
+      position: absolute;
+      top: 50px;                 /* FIXED vertical location */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 3.5em;
+      font-weight: bold;
+      color: #444;
+      transition: font-family 0.5s ease-in-out;
+      width: 100%;
+      pointer-events: none;     /* optional: prevents selecting text */
     }
+
+    /* FIXED SUBTITLE (no shifting) */
+    .subtitle {
+      position: absolute;
+      top: 145px;               /* always the same distance */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.2em;
+      color: #999999;
+      font-style: italic;
+      width: 100%;
+      pointer-events: none;
+    }
+
+    /* BIOGRAPHY BLOCK — now placed BEYOND the shifting zone */
+    .bio-block {
+      width: 99%;
+      max-width: 1600px;
+      background-color: white;
+      border-radius: 12px;
+      padding: 40px;
+      min-height: 950px;
+      box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
+      text-align: left;
+      font-size: 1.1em;
+      line-height: 1.6em;
+      opacity: 0.9;
+
+      /* THE IMPORTANT FIX → place the block BELOW the subtitle permanently */
+      position: absolute;
+      top: 250px;          /* This ensures NOTHING moves regardless of font */
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+        /* FLEX CONTAINER FOR TWO COLUMNS */
+    .bio-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px; /* space between text and image */
+      height: 100%;
+    }
+    
+      .bio-text {
+        flex: 1;
+      
+        /* NEW — Center text inside the content block */
+        text-align: center;
+      
+        /* NEW — Add padding */
+        padding-right: 20px;   /* +20px right padding */
+        padding-top: 50px;     /* +50px downward padding */
+      
+        font-size: 1.1em;
+        line-height: 1.6em;
+      }
+
+    
+    /* RIGHT COLUMN: Image */
+    .bio-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;   /* centers image inside right column */
+      align-items: flex-start;
+    }
+    
+    .bio-image img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 12px;
+      box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+      object-fit: cover;             
+      transform: scale(1.4) translateY(70px); /* 40% larger and offset downward */
+      transform-origin: center;      
+    }
+
+  /* RETURN BUTTON BLOCK */
+  .return-block {
+    position: absolute;
+    top: 950px;          /* moved 50px downward (300 → 350) */
+    left: 60px;          /* moved 20px to the right (40 → 60) */
+  
+    width: 260px;
+    background-color: white;
+    padding: 20px 10px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+    text-align: center;       /* ← NEW: perfect centering */
+  }
+
+/* Return link styling */
+.return-link {
+  text-decoration: none;
+  color: #ADD8E6;
+  font-size: 1.3em;
+  font-weight: bold;
+
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.return-link:hover {
+  transform: scale(1.15);
+}
+
+.return-link:active {
+  transform: scale(1.07);
+}
+
+
+.return-link:hover {
+  transform: scale(1.2);
+}
+
+.return-link:active {
+  transform: scale(1.1);
+}
+
+
+
   </style>
 </head>
 
 <body>
-  <p>Hello! Your page is working.</p>
+
+  <h1 class="title" id="changingTitle">What are my achievements?</h1>
+
+  <p class="subtitle">I enjoy experimenting with design, so I let the title cycle through a few of my favorite styles.</p>
+
+  <!-- BIO SECTION -->
+  <div class="bio-block">
+    <div class="bio-container">
+      
+      <!-- LEFT SIDE: Text -->
+      <div class="bio-text">
+        <p>As of the creation of this page, I am a high school student finishing my third year in Pará, Brazil. I have been programming and drawing since my earliest memory and plan to dedicate my life to them until my last.</p>
+  
+        <p>I have lived my entire life here, but my ambitions have always seemed to lie just beyond it. Do not misunderstand me, I am nothing without my homeland, as it is what made me. It was here that I discovered my passion for art, for the stars, and for numbers. I would be a lesser person without it.</p>
+  
+        <p>However, as time passed, it became clear to me that I must eventually leave to pursue new opportunities and fully reach my potential.</p>
+  
+        <p>This website was created as one of many steps toward that dream, something to show others, far from me, the works I’ve created and the love I’ve poured into them. Made in equal parts as an opportunity and a record, something I can look back on fondly once I enter college.</p>
+  
+        <p>On the other pages, you will find a deeper analysis of my skills, learning, and process. This one simply explains my motivations.</p>
+  
+        <p>Enjoy your stay.</p>
+      </div>
+  
+      <!-- RIGHT SIDE: Image placeholder -->
+      <div class="bio-image">
+        <!-- Replace with your actual image later -->
+        <img src="Images/Magopic.png" alt="Charles Lima Image">
+      </div>
+
+      <div class="bio-image">
+        <!-- Replace with your actual image later -->
+        <img src="Images/Magopic.png" alt="Charles Lima Image">
+      </div>
+  
+    </div>
+  </div>
+  
+    <!-- RETURN BUTTON -->
+  <div class="return-box">
+    <a href="https://magolordo.github.io/WebPages/MainPage" class="return-link">Return to main page</a>
+  </div>
+
+
+  <script>
+    const title = document.getElementById("changingTitle");
+
+    /* Fonts that will cycle */
+    const fonts = [
+      "Arial, sans-serif",
+      "Georgia, serif",
+      "'Courier New', monospace",
+      "'Trebuchet MS', sans-serif",
+      "'Times New Roman', serif",
+      "'Lucida Console', monospace",
+      "'Comic Sans MS', cursive",
+      "'Verdana', sans-serif"
+    ];
+
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % fonts.length;
+      title.style.fontFamily = fonts[index];
+    }, 1000);
+  </script>
+
 </body>
 </html>
