@@ -3,7 +3,7 @@
 <!-- Main Page -->
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="../Images/The-Magolordo.png">
+  <link rel="icon" type="image/png" href="Images/The-Magolordo.png">
   <title>Charles Lima - About me</title>
 
   <style>
@@ -11,7 +11,7 @@
     body {
       background-color: #f5f5dc;
       text-align: center;
-      margin-top: 60px;   /* Same offset as your Hello! */
+      margin-top: 60px;
       font-family: Arial, sans-serif;
       opacity: 0;
       animation: fadeIn 0.5s forwards;
@@ -23,32 +23,46 @@
       to   { opacity: 1; }
     }
 
-    /* Large title with smooth change */
-    #changing-title {
-      font-size: 3.5em;
-      font-weight: bold;
-      color: #444444;
-      transition: font-family 0.5s ease;  /* smooth font change */
-      margin-bottom: 40px;
+    p {
+      color: #555555;
     }
 
+    /* MAIN TITLE ("Who is Charles Lima?") */
+    .title {
+      margin-top: 60px;       /* 60px downward offset */
+      font-size: 3.5em;
+      font-weight: bold;
+      color: #444;
+      transition: font-family 0.5s ease-in-out;
+    }
+
+    /* Flair text */
+    .subtitle {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #999999;
+      font-style: italic;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- NEW animated changing title -->
-  <h1 id="changing-title">Who is Charles Lima?</h1>
+  <h1 class="title" id="changingTitle">Who is Charles Lima?</h1>
+  <p class="subtitle">I couldn't decide which font I liked more, so I chose all of them.</p>
 
   <script>
-    const title = document.getElementById("changing-title");
+    const title = document.getElementById("changingTitle");
 
+    /* List of fun/fonts to rotate through */
     const fonts = [
       "Arial, sans-serif",
-      "'Times New Roman', serif",
+      "Georgia, serif",
       "'Courier New', monospace",
-      "'Georgia', serif",
       "'Trebuchet MS', sans-serif",
+      "'Times New Roman', serif",
+      "'Lucida Console', monospace",
+      "'Comic Sans MS', cursive",
       "'Verdana', sans-serif"
     ];
 
@@ -57,7 +71,7 @@
     setInterval(() => {
       index = (index + 1) % fonts.length;
       title.style.fontFamily = fonts[index];
-    }, 1000);
+    }, 1000); // changes font every 1 second
   </script>
 
 </body>
