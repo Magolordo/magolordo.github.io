@@ -121,29 +121,42 @@
       transform-origin: center;      
     }
 
-    /* RETURN BUTTON CONTAINER */
+/* RETURN BUTTON BLOCK */
 .return-box {
   position: absolute;
-  top: 950px;             /* Positions it 50px below the bio-block (bio-block ends ~900px) */
-  left: 40px;             /* 40px offset from left side */
+  top: 950px;                   /* moved 50px down from previous */
+  left: 40px;                   /* original left anchor */
+  transform: translateX(20px);  /* NEW — pushes it 20px further right */
+
   width: 260px;
   background-color: white;
-  padding: 18px 22px;
-  border-radius: 10px;
+
+  border-radius: 12px;
+  padding: 20px 10px;
+
   box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
-  text-align: left;
+  text-align: center;           /* NEW — centers the text inside */
 }
 
-/* Makes the link behave like your existing animated links */
+/* Return link styling */
 .return-link {
   text-decoration: none;
   color: #ADD8E6;
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: bold;
 
   display: inline-block;
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition: transform 0.2s ease;
 }
+
+.return-link:hover {
+  transform: scale(1.15);
+}
+
+.return-link:active {
+  transform: scale(1.07);
+}
+
 
 .return-link:hover {
   transform: scale(1.2);
