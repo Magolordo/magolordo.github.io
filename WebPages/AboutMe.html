@@ -114,6 +114,39 @@
       transform-origin: center;      
     }
 
+    /* RETURN BUTTON CONTAINER */
+.return-box {
+  position: absolute;
+  top: 950px;             /* Positions it 50px below the bio-block (bio-block ends ~900px) */
+  left: 40px;             /* 40px offset from left side */
+  width: 260px;
+  background-color: white;
+  padding: 18px 22px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+  text-align: left;
+}
+
+/* Makes the link behave like your existing animated links */
+.return-link {
+  text-decoration: none;
+  color: #ADD8E6;
+  font-size: 1.2em;
+  font-weight: bold;
+
+  display: inline-block;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.return-link:hover {
+  transform: scale(1.2);
+}
+
+.return-link:active {
+  transform: scale(1.1);
+}
+
+
 
   </style>
 </head>
@@ -151,6 +184,12 @@
   
     </div>
   </div>
+  
+    <!-- RETURN BUTTON -->
+  <div class="return-box">
+    <a href="https://magolordo.github.io" class="return-link">Return to main page</a>
+  </div>
+
 
   <script>
     const title = document.getElementById("changingTitle");
