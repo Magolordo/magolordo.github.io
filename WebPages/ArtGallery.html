@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="Images/The-Magolordo.png">
-  <title>Charles Lima - Portfolio</title>
+  <title>Charles Lima - Art Gallery</title>
 
   <style>
      /* Fade-in animation */
@@ -23,7 +23,7 @@
       opacity: 0;
       animation: fadeIn 0.5s forwards;
     
-      min-height: 1100px;
+      min-height: 1200px;
     }
 
     @keyframes fadeIn {
@@ -65,7 +65,7 @@
       background-color: white;
       border-radius: 12px;
       padding: 40px;
-      min-height: 950px;
+      min-height: 750px;
       box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
       text-align: left;
       font-size: 1.1em;
@@ -102,24 +102,24 @@
         line-height: 1.6em;
       }
 
-    
-    /* RIGHT COLUMN: Image */
-    .bio-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;   /* centers image inside right column */
-      align-items: flex-start;
-    }
-    
-    .bio-image img {
-      max-width: 100%;
-      max-height: 100%;
-      border-radius: 12px;
-      box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
-      object-fit: cover;             
-      transform: scale(1.4) translateY(70px); /* 40% larger and offset downward */
-      transform-origin: center;      
-    }
+  
+      /* RIGHT COLUMN: Image container */
+        .bio-image {
+        flex: 1;
+        display: flex;
+        flex-direction: column;  /* STACK IMAGES DOWNWARD */
+        align-items: center;
+        gap: 25px;               /* SPACE BETWEEN IMAGES */
+        padding-top: 20px;
+      }
+      
+      .bio-image img {
+        width: 80%;
+        height: auto;
+        border-radius: 12px;
+        object-fit: cover;
+        box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+      }
 
   /* RETURN BUTTON BLOCK */
   .return-block {
@@ -170,7 +170,7 @@
 
 <body>
 
-  <h1 class="title" id="changingTitle">What are my achievements?</h1>
+  <h1 class="title" id="changingTitle">What is my art?</h1>
 
   <p class="subtitle">I enjoy experimenting with design, so I let the title cycle through a few of my favorite styles.</p>
 
@@ -180,28 +180,22 @@
       
       <!-- LEFT SIDE: Text -->
       <div class="bio-text">
-        <p>As of the creation of this page, I am a high school student finishing my third year in Pará, Brazil. I have been programming and drawing since my earliest memory and plan to dedicate my life to them until my last.</p>
-  
-        <p>I have lived my entire life here, but my ambitions have always seemed to lie just beyond it. Do not misunderstand me, I am nothing without my homeland, as it is what made me. It was here that I discovered my passion for art, for the stars, and for numbers. I would be a lesser person without it.</p>
-  
-        <p>However, as time passed, it became clear to me that I must eventually leave to pursue new opportunities and fully reach my potential.</p>
-  
-        <p>This website was created as one of many steps toward that dream, something to show others, far from me, the works I’ve created and the love I’ve poured into them. Made in equal parts as an opportunity and a record, something I can look back on fondly once I enter college.</p>
-  
-        <p>On the other pages, you will find a deeper analysis of my skills, learning, and process. This one simply explains my motivations.</p>
-  
-        <p>Enjoy your stay.</p>
+        <p>Astronomy and programming have always been passions of mine, subjects I’ve obsessed over for years. But it was in 2023 that I began putting my knowledge to academic use.</p>
+        
+        <p>I received an opportunity to participate in national and international Olympiad exams through my former school, Ideal, in Pará. Through these competitions, I proved myself qualified and earned international awards and recognition for my knowledge of astronomy and programming.</p>
+        
+        <p>I was awarded a gold medal in the National Astronomy Olympiad (OBA), being the only student across all Ideal units in Brazil to reach the international phase.</p>
+        
+        <p>I also received an honorary mention for placing third in my school in the National Computing Olympiad (OBI), finishing just one spot away from advancing to the international phase and earning medals there as well.</p>
+        
+        <p>These two achievements now define my drive, as they stand as proof that I am capable.</p>
       </div>
   
-      <!-- RIGHT SIDE: Image placeholder -->
+      <!-- RIGHT SIDE: Image column -->
       <div class="bio-image">
-        <!-- Replace with your actual image later -->
-        <img src="Images/Magopic.png" alt="Charles Lima Image">
-      </div>
-
-      <div class="bio-image">
-        <!-- Replace with your actual image later -->
-        <img src="Images/Magopic.png" alt="Charles Lima Image">
+        <img src="Images/MagoOBA.jpg" alt="Charles Lima Image">
+        <img src="Images/MagoOBA2.jpg" alt="Charles Lima Image">
+        <!-- Add more images here -->
       </div>
   
     </div>
