@@ -144,12 +144,18 @@
     text-align: center;       /* ← NEW: perfect centering */
   }
 
-/* Return link styling */
-.return-link {
-  text-decoration: none;
-  color: #ADD8E6;
-  font-size: 1.3em;
-  font-weight: bold;
+        /* Spacer below title & subtitle to push content downward */
+    .title-spacer {
+      height: 300px;   /* adjust higher/lower depending on how far down you want the blocks */
+      width: 100%;
+    }
+
+    /* Return link styling */
+    .return-link {
+      text-decoration: none;
+      color: #ADD8E6;
+      font-size: 1.3em;
+      font-weight: bold;
 
   display: inline-block;
   transition: transform 0.2s ease;
@@ -183,6 +189,8 @@
 
   <p class="subtitle">I enjoy experimenting with design, so I let the title cycle through a few of my favorite styles.</p>
 
+  <!-- SPACER FIX -->
+  <div class="title-spacer"></div>
   <!-- BIO SECTION -->
   <!-- PROJECT BLOCK 1 -->
   <div class="project-block">
