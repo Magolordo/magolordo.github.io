@@ -68,42 +68,42 @@
       }
 
     /* BIOGRAPHY BLOCK — now placed BEYOND the shifting zone */
-    .bio-block {
-      width: 90%;
-      max-width: 1600px;
-      background-color: white;
-      border-radius: 12px;
-      padding: 40px;
-      min-height: 2750px;
-      box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
-      text-align: left;
-      font-size: 1.1em;
-      line-height: 1.6em;
-      opacity: 0.9;
-
-      /* THE IMPORTANT FIX → place the block BELOW the subtitle permanently */
-      position: absolute;
-      top: 250px;          /* This ensures NOTHING moves regardless of font */
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-        /* FLEX CONTAINER FOR TWO COLUMNS */
-      .bio-container {
-        display: flex;
-        flex-direction: column;   /* ← STACK EVERYTHING VERTICALLY */
-        align-items: center;      /* ← CENTER ALL CONTENT */
-        gap: 40px;
+      /* PROJECT BLOCK CONTAINER */
+      .project-block {
+        width: 90%;
+        max-width: 1600px;
+        background-color: white;
+        border-radius: 12px;
+        padding: 40px 20px;
+        margin: 40px auto;                /* ← automatic stacking spacing */
+        box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
+        text-align: center;               /* center all text */
+        opacity: 0.92;
       }
-
-          .image-caption {
-        font-size: 0.9em;
-        color: #bbbbbb;
-        margin-top: 8px;
-        text-align: center;
+      
+      /* PROJECT TITLE */
+      .project-title {
+        font-size: 2.2em;
+        font-weight: bold;
+        color: #444;
+        margin-bottom: 20px;
       }
-
-    
+      
+      /* PROJECT IMAGE (full width of the block) */
+      .project-image {
+        width: 100%;
+        border-radius: 12px;
+        object-fit: cover;
+        margin: 15px 0;
+        box-shadow: 0px 0px 8px rgba(0,0,0,0.15);
+      }
+      
+      /* PROJECT SUBTITLE */
+      .project-subtitle {
+        font-size: 1.1em;
+        color: #777;
+        margin-top: 10px;
+      } 
         .bio-text {
           width: 100%;
           text-align: center;
@@ -184,16 +184,33 @@
   <p class="subtitle">I enjoy experimenting with design, so I let the title cycle through a few of my favorite styles.</p>
 
   <!-- BIO SECTION -->
-  <div class="bio-block">
-    <div class="bio-container">
-    
-      <!-- TEXT BLOCK -->
-      <div class="bio-text">
-        <p>The page is working</p>
-      </div>
-    
-    </div>
+  <!-- PROJECT BLOCK 1 -->
+  <div class="project-block">
+    <div class="project-title">First Project Title</div>
+  
+    <img src="Images/draw1.png" class="project-image">
+  
+    <div class="project-subtitle">Your subtitle for project 1.</div>
   </div>
+  
+  <!-- PROJECT BLOCK 2 -->
+  <div class="project-block">
+    <div class="project-title">Second Project Title</div>
+  
+    <img src="Images/draw1.png" class="project-image">
+  
+    <div class="project-subtitle">Your subtitle for project 2.</div>
+  </div>
+  
+  <!-- PROJECT BLOCK 3 -->
+  <div class="project-block">
+    <div class="project-title">Third Project Title</div>
+  
+    <img src="Images/draw1.png" class="project-image">
+  
+    <div class="project-subtitle">Your subtitle for project 3.</div>
+  </div>
+
   
     <!-- RETURN BUTTON -->
   <div class="return-box">
