@@ -4,18 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="Images/The-Magolordo.png">
-  <title>Charles Lima - Main Page</title>
+  <title>Charles Lima - Programming Gallery</title>
 
   <style>
-    /* Fade-in animation */
+     /* Fade-in animation */
     body {
       background-color: #f5f5dc;
+      background-image: url("Images/RoseBG.png");
+      background-attachment: fixed;      /* makes the image follow scrolling */
+      background-repeat: no-repeat;      /* prevents tiling */
+      background-position: center;       /* centers the rose */
+      background-size: 700px auto;      /* adjust size here if needed */
+    
       text-align: center;
       margin-top: 60px;
       font-family: Arial, sans-serif;
+    
       opacity: 0;
       animation: fadeIn 0.5s forwards;
-      min-height: 2000px;
+    
+      min-height: 3200px;
     }
 
     @keyframes fadeIn {
@@ -23,13 +31,258 @@
       to   { opacity: 1; }
     }
 
-    p {
-      color: #555555;
+    /* FIXED TITLE (no shifting) */
+    .title {
+      position: absolute;
+      top: 50px;                 /* FIXED vertical location */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 3.5em;
+      font-weight: bold;
+      color: #444;
+      transition: font-family 0.5s ease-in-out;
+      width: 100%;
+      pointer-events: none;     /* optional: prevents selecting text */
     }
+
+    /* FIXED SUBTITLE (no shifting) */
+    .subtitle {
+      position: absolute;
+      top: 145px;               /* always the same distance */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.2em;
+      color: #999999;
+      font-style: italic;
+      width: 100%;
+      pointer-events: none;
+    }
+
+          .image-wrapper {
+        width: 100%;
+        max-width: 1400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+    /* BIOGRAPHY BLOCK — now placed BEYOND the shifting zone */
+    .bio-block {
+      width: 90%;
+      max-width: 1600px;
+      background-color: white;
+      border-radius: 12px;
+      padding: 40px;
+      min-height: 2750px;
+      box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
+      text-align: left;
+      font-size: 1.1em;
+      line-height: 1.6em;
+      opacity: 0.9;
+
+      /* THE IMPORTANT FIX → place the block BELOW the subtitle permanently */
+      position: absolute;
+      top: 250px;          /* This ensures NOTHING moves regardless of font */
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+        /* FLEX CONTAINER FOR TWO COLUMNS */
+      .bio-container {
+        display: flex;
+        flex-direction: column;   /* ← STACK EVERYTHING VERTICALLY */
+        align-items: center;      /* ← CENTER ALL CONTENT */
+        gap: 40px;
+      }
+
+          .image-caption {
+        font-size: 0.9em;
+        color: #bbbbbb;
+        margin-top: 8px;
+        text-align: center;
+      }
+
+    
+        .bio-text {
+          width: 100%;
+          text-align: center;
+          padding: 20px 60px; /* good spacing for centered text */
+          font-size: 1.1em;
+          line-height: 1.6em;
+        }
+
+  
+      /* RIGHT COLUMN: Image container */
+        .bio-image {
+          width: 100%;                  /* fills the content block */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 25px;
+        }
+        
+        .bio-image img {
+          width: 100%;                  /* ← IMAGE STRETCHES FULL WIDTH */
+          max-width: 1400px;            /* ← prevents overly huge images */
+          border-radius: 12px;
+          object-fit: cover;
+          box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+  /* RETURN BUTTON BLOCK */
+  .return-block {
+    position: absolute;
+    top: 950px;          /* moved 50px downward (300 → 350) */
+    left: 60px;          /* moved 20px to the right (40 → 60) */
+  
+    width: 260px;
+    background-color: white;
+    padding: 20px 10px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+    text-align: center;       /* ← NEW: perfect centering */
+  }
+
+/* Return link styling */
+.return-link {
+  text-decoration: none;
+  color: #ADD8E6;
+  font-size: 1.3em;
+  font-weight: bold;
+
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.return-link:hover {
+  transform: scale(1.15);
+}
+
+.return-link:active {
+  transform: scale(1.07);
+}
+
+
+.return-link:hover {
+  transform: scale(1.2);
+}
+
+.return-link:active {
+  transform: scale(1.1);
+}
+
+
+
   </style>
 </head>
 
 <body>
-  <p>Hello! Your page is working.</p>
+
+  <h1 class="title" id="changingTitle">What is my art?</h1>
+
+  <p class="subtitle">I enjoy experimenting with design, so I let the title cycle through a few of my favorite styles.</p>
+
+  <!-- BIO SECTION -->
+  <div class="bio-block">
+    <div class="bio-container">
+    
+      <!-- TEXT BLOCK -->
+      <div class="bio-text">
+        <p>As of today, I am 18 years old and have been an artist for all 18 of those years.</p>
+        
+        <p>My native language is Portuguese, as I am Brazilian, but the language I am most fluent in is the one I draw in. Whether it’s my emotions or my thoughts, letters or sketches, I use art to express what I can’t put into words.</p>
+        
+        <p>I draw for fun, but also professionally. I have made around 200 dollars selling commissions through Discord in 2025, and I plan on making more in 2026.</p>
+        
+        <p>Below are a few examples of my work.</p>
+      </div>
+    
+      <!-- IMAGES BELOW THE TEXT -->
+      <div class="bio-image">
+      
+        <div class="image-wrapper">
+          <img src="Images/draw0.png" alt="Draw9">
+          <div class="image-caption">Stumbled my toe - 26th, July 2025</div>
+        </div>
+      
+        <div class="image-wrapper">
+          <img src="Images/draw1.png" alt="Draw9">
+          <div class="image-caption">Beach - 18th, May 2025</div>
+        </div>
+
+                <div class="image-wrapper">
+          <img src="Images/draw2.png" alt="Draw9">
+          <div class="image-caption">Stop - 8th, January 2024</div>
+        </div>
+
+                <div class="image-wrapper">
+          <img src="Images/draw3.png" alt="Draw9">
+          <div class="image-caption">Kokushibo (commisioned) - 23rd, September 2024</div>
+        </div>
+
+                <div class="image-wrapper">
+          <img src="Images/draw4.png" alt="Draw9">
+          <div class="image-caption">Owl - 29th, Januart 2025</div>
+        </div>
+
+                <div class="image-wrapper">
+          <img src="Images/draw5.png" alt="Draw9">
+          <div class="image-caption">Gargoyle - 19th, January 2025</div>
+        </div>
+
+                <div class="image-wrapper">
+          <img src="Images/draw6.png" alt="Draw9">
+          <div class="image-caption">Home - 16th, January 2025</div>
+        </div>
+
+                <div class="image-wrapper">
+          <img src="Images/draw7.png" alt="Draw9">
+          <div class="image-caption">Himeno (Comissioned) - 13th, May 2025</div>
+        </div>
+
+                <div class="image-wrapper">
+          <img src="Images/draw8.png" alt="Draw9">
+          <div class="image-caption">Beelzebub - 17th, March 2025</div>
+        </div>
+
+                <div class="image-wrapper">
+          <img src="Images/draw9.png" alt="Draw9">
+          <div class="image-caption">Lucifer - 13th, March 2025</div>
+        </div>
+      
+      </div>
+    
+    </div>
+  </div>
+  
+    <!-- RETURN BUTTON -->
+  <div class="return-box">
+    <a href="https://magolordo.github.io/WebPages/MainPage" class="return-link">Return to main page</a>
+  </div>
+
+
+  <script>
+    const title = document.getElementById("changingTitle");
+
+    /* Fonts that will cycle */
+    const fonts = [
+      "Arial, sans-serif",
+      "Georgia, serif",
+      "'Courier New', monospace",
+      "'Trebuchet MS', sans-serif",
+      "'Times New Roman', serif",
+      "'Lucida Console', monospace",
+      "'Comic Sans MS', cursive",
+      "'Verdana', sans-serif"
+    ];
+
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % fonts.length;
+      title.style.fontFamily = fonts[index];
+    }, 1000);
+  </script>
+
 </body>
 </html>
